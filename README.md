@@ -9,7 +9,9 @@ Antes de seguir em frente, revise as etapas de [criação do aplicativo](https:/
 Para facilitar a configuração do aplicativo, vamos usar a biblioteca [dotenv](https://github.com/motdotla/dotenv). Com base nos procedimentos da documentação oficial:
  - Abra / retorne ao **Node.js command prompt** do projeto;
  - Instale a dependência, comandado:
+
 ```npm install dotenv --save```
+
  - Abra / retorne ao **VSCode** do projeto;
  - Crie um novo arquivo `.env`, na raiz do projeto e adicione o seguinte conteúdo:
 ```
