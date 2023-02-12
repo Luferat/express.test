@@ -39,6 +39,9 @@ const controller = {
 // Rota para as requisições do método "GET".
 app.get('/', controller.resJson);
 
+// Rota para as requisições do método "GET" com parâmetro "id".
+app.get('/:id', controller.resJson);
+
 app.listen(port, () => {
   console.log(`Executando servidor em http://localhost:${port}`);
 });
