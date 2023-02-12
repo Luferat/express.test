@@ -1,5 +1,3 @@
-
-
 # express.test
 Aplicativo experimental em Node.js, Express e MySQL.
 
@@ -10,7 +8,7 @@ Antes de seguir as próximas etapas, verifique se preparou o [arquivo de configu
 
 > **Importante!**
 >
-> Como, à partir de agora, nossas requisições retornarão dados no formato JSON, é importante usar o [Postman](https://www.postman.com/) para executar os testes. AS instruções para instalação dele [estão aqui](https://docs.google.com/document/d/1Zo42HZvGtEAx-9OjLX5Cr9J5SKl07NvUxLGSTSbWHpc/edit?usp=sharing).
+> Como, a partir de agora, nossas requisições retornarão dados no formato JSON, é importante usar o [Postman](https://www.postman.com/) para executar os testes. As instruções para instalação dele [estão aqui](https://docs.google.com/document/d/1Zo42HZvGtEAx-9OjLX5Cr9J5SKl07NvUxLGSTSbWHpc/edit?usp=sharing).
 
 Antes de criarmos os métodos que vão responder às requisições HTTP, vamos criar um método para executá-las:
 
@@ -89,3 +87,6 @@ Analise a resposta  da requisição, observando os valores das diversas chaves d
 
 ---
 [← Arquivo de Configuração](https://github.com/Luferat/express.test/tree/Atividade.02_Arquivo_de_configura%C3%A7%C3%A3o) || **Verbos HTTP** || Verbos HTTP (getAll e getOne) →
+
+
+
