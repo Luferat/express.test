@@ -2,7 +2,7 @@
 # express.test
 Aplicativo experimental em Node.js, Express e MySQL.
 
-## Criando aplicativo
+## Criando o Aplicativo
 Antes de seguir em frente, revise as etapas de [criação do aplicativo](https://github.com/Luferat/express.test/tree/Atividade.01_Criando_o_Aplicativo).
 
 ## Arquivo de Configuração
