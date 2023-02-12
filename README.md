@@ -48,5 +48,9 @@ app.listen(port, () => {
 > 
 > Por padrão, arquivos `.env*` não são enviados para repositórios Origin do Git, já que eles podem conter informações sensíveis como login e senhas de banco de dados, de APIs pagas e de provedores de serviço.
 > *Lembre-se de manter um backup seguro destes arquivos.*
+
+### Atividade de Reforço
+Edite as configurações do aplicativo para que, de forma experimental, o arquivo `.env`, que contém as configurações básicas do aplicativ, seja enviado para o repositório **Origin** do Git, no nosso caso, para o GitHub.com.
+
 ---
 [← Criando o Aplicativo](https://github.com/Luferat/express.test/tree/Atividade.01_Criando_o_Aplicativo) || **Arquivo de Configuração** || [Verbos HTTP →](https://github.com/Luferat/express.test/tree/Atividade.03_Verbos_HTTP)
