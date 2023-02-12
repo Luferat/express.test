@@ -107,6 +107,8 @@ Observe que a resposta agora inclui o atributo "body" com os dados que foram env
 
 ### Atividade de Reforço
 
+1. Realize mais alguns testes de "POST" com o **Postman** e analise os resultados. Como você faria para extrair esses dados de forma a poder, por exemplo, salvá-los em um banco de dados usando "SQL"?
+2. Faça testes com o método "PUT". Observe que ele exige que o parâmetro "ID" seja passado na rota. Por que isso acontece?
 
 ## Salve a Atividade
 
