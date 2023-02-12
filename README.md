@@ -41,12 +41,14 @@ npm install nodemon --save
 ```
 
 ### Atividades de Reforço
+
 1. O que são essas dependências? Para que serve cada uma?
 2. Onde essas dependências foram instaladas?
 3. Por que usamos o parâmetro `--save` na instalação delas?
 
 ### Criado os arquivos → VSCode
- - Abra o VSCode, comandando `code .`;
+
+- Abra o VSCode, comandando `code .` no **Node.js command prompt**;
    - Caso o comando não funcione, revise a [instalação do VSCode](https://docs.google.com/file/d/1Zo42HZvGtEAx-9OjLX5Cr9J5SKl07NvUxLGSTSbWHpc).
  - Crie o arquivo `index.js` com o seguinte conteúdo ([referências](https://expressjs.com/pt-br/starter/hello-world.html)):
 ```
