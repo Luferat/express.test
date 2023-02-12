@@ -37,6 +37,12 @@ const controller = {
   }
 }
 
+// Extrai os dados do cabeçalho da requisição usando "URL ENCODED".
+// const bodyParser = require('body-parser').urlencoded();
+
+// Extrai os dados do cabeçalho da requisição usando "JSON".
+const bodyParser = require('body-parser').json();
+
 // Rota para as requisições do método "GET".
 app.get('/', controller.resJson);
 
@@ -45,6 +51,12 @@ app.get('/:id', controller.resJson);
 
 // Rota para as requisições do método "DELETE" com parâmetro "id".
 app.delete('/:id', controller.resJson);
+
+// Rota para as requisições do método "POST".
+app.post('/', bodyParser, controller.resJson);
+
+// Rota para as requisições do método "PUT" com parâmetro "id".
+app.put('/:id', bodyParser, controller.resJson);
 
 app.listen(port, () => {
   console.log(`Executando servidor em http://localhost:${port}`);
