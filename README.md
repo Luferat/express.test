@@ -6,11 +6,25 @@ Aplicativo experimental em Node.js, Express e MySQL.
 Antes de seguir em frente, revise as etapas de [criação do aplicativo](https://github.com/Luferat/express.test/tree/Atividade.01_Criando_o_Aplicativo).
 
 ## Arquivo de Configuração
+
 Para facilitar a configuração do aplicativo, vamos usar a biblioteca [dotenv](https://github.com/motdotla/dotenv). Com base nos procedimentos da documentação oficial:
+
+### Versionando
+
+ - Abra / retorne ao **GitHub Desktop**;
+ - Confirme se o *branch* `main` está ativo;
+ - Clique no menu `Branch` → `New branch...`;
+ - Nomeie o branch da melhor forma, por exemplo: `2023.02.11.Configuracao`;
+ - Clique no botão [Create branch].
+
+### Dependências
+
  - Abra / retorne ao **Node.js command prompt** do projeto;
- - Instale a dependência, comandado:
+ - Instale a dependência, comandando:
 
 ```npm install dotenv --save```
+
+### Implemendando
 
  - Abra / retorne ao **VSCode** do projeto;
  - Crie um novo arquivo `.env`, na raiz do projeto e adicione o seguinte conteúdo:
