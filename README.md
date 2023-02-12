@@ -1,71 +1,49 @@
+
 # express.test
 Aplicativo experimental em Node.js, Express e MySQL.
 
-## Preparação do Dev Setup
-Antes de tudo, prepare o setup de desenvolvimento, conforme a descrição [deste link](https://docs.google.com/file/d/1Zo42HZvGtEAx-9OjLX5Cr9J5SKl07NvUxLGSTSbWHpc).  
-
 ## Criando aplicativo
- - Abra um "**Node.js command prompt**";
- - Navegue até a pasta onde a pasta do projeto será criada;
-   - Use o comando `cd` e a tecla `[Tab]` para navegar entre as pastas.
- - Crie a pasta do projeto e entre nela;
-   - Use o comando `mkdir` para criar a pasta e o comando `cd` para entrar nela:
-```
-mkdir express.test
-cd express.test
-```
- - Use o comando `npm init` para criar o projeto
- - Preencha os dados solicitados com atenção;
-   - Será criado um arquivo `package.json` com todos os dados do projeto que você inseriu;
- - Instale as dependências iniciais, comandando:
-```
-npm install express --save
-npm install nodemon --save
-```
+Antes de seguir em frente, revise as etapas de [criação do aplicativo](https://github.com/Luferat/express.test/tree/Atividade.01_Criando_o_Aplicativo).
 
-> **Atividades complementares de pesquisa:**
->  1. O que são essas dependências? Para que serve cada uma?
->  2. Onde essas dependências foram instaladas?
->  2. Por que usamos o parâmetro `--save` na instalação delas?
-
- - Abra o VSCode, comandando `code .`;
-   - Caso o comando não funcione, revise a [instalação do VSCode](https://docs.google.com/file/d/1Zo42HZvGtEAx-9OjLX5Cr9J5SKl07NvUxLGSTSbWHpc).
- - Crie o arquivo `index.js` com o seguinte conteúdo ([referências](https://expressjs.com/pt-br/starter/hello-world.html)):
+## Arquivo de Configuração
+Para facilitar a configuração do aplicativo, vamos usar a biblioteca [dotenv](https://github.com/motdotla/dotenv). Com base nos procedimentos da documentação oficial:
+ - Abra / retorne ao **Node.js command prompt** do projeto;
+ - Instale a dependência, comandado:
+```npm install dotenv --save```
+ - Abra / retorne ao **VSCode** do projeto;
+ - Crie um novo arquivo `.env`, na raiz do projeto e adicione o seguinte conteúdo:
+```
+HTTPPORT = 3000
+APP_NAME = Express.Test
+```
+ - Edite `index.js` para o seguinte conteúdo:
 ```
 const express = require('express');
 const app = express();
-const port = 3000;  
+
+// Obtém configurações do aplicativo.
+const conf = require('dotenv').config().parsed;
+
+// Configuração da porta do servidor HTTP.
+const port = conf.HTTPPORT || 3000;
+
+// Configuração do nome do aplicativo.
+const appName = conf.APP_NAME;
 
 app.get('/', (req, res) => {
-    res.send('<h1>Olá Mundo!</h1>');
+  res.send(`
+    <h1>${appName}</h1>
+    <p>Olá Mundo!</p>
+  `);
 });
 
 app.listen(port, () => {
-    console.log(`Executando servidor em http://localhost:${port}`);
+  console.log(`Executando servidor em http://localhost:${port}`);
 });
-```
- - Rode o servidor, comandando `nodemon index.js` pelo "**Node.js command prompt**";
- - Abra o navegador e acesse o endereço `http://localhost:3000/`.
+``` 
 
-O resultado deve ser a mensagem "**Olá Mundo!**" exibida no navegador.
-
-> O aplicativo inicia um servidor e escuta a porta `3000` por conexões. Quando ocorrer uma (request), ele responde com “Olá Mundo!” à solicitações para a URL raiz (`/`) ou _rota_. Para todos os outros caminhos, ele irá responder com um **404 Não Encontrado**.
-
-### Atividade de Reforço
-Volte ao VSCode e, com base em pesquisas, adicione um comentário (`//`) acima de cada linha de código, explicando de forma bem resumida o que ela faz no aplicativo. Veja o exemplo, onde já comentamos a primeira instrução:
-```
-// Importa a biblioteca "Express.js" e a atribui para a constante "express".
-const express = require('express');
-const app = express();
-const port = 3000;  
-
-app.get('/', (req, res) => {
-    res.send('<h1>Olá Mundo!</h1>');
-});
-
-app.listen(port, () => {
-    console.log(`Executando servidor em http://localhost:${port}`);
-});
-```
+> **IMPORTANTE!**
+> Por padrão, arquivos `.env*` não são enviados para repositórios Origin do Git, já que eles podem conter informações sensíveis como login e senhas de banco de dados, de APIs pagas e de provedores de serviço.
+> *Lembre-se de manter um backup seguro destes arquivos.*
 ---
-← [Preparação do Dev Setup](https://github.com/Luferat/express.test) || **Criando o Aplicativo** || Próximo →
+[← Criando o Aplicativo](https://github.com/Luferat/express.test/blob/Atividade.01_Criando_o_Aplicativo) || **Arquivo de Configuração** || [Verbos HTTP →](https://github.com/Luferat/express.test/blob/Atividade.03_Verbos_HTTP)
