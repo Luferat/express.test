@@ -68,4 +68,4 @@ app.listen(port, () => {
 });
 ```
 ---
-← [Preparação do Dev Setup](https://github.com/Luferat/express.test) || **Criando o Aplicativo** || [Arquivo de Configuração →](https://github.com/Luferat/express.test/tree/Atividade.02_Arquivo_de_configura%C3%A7%C3%A3o)
+[← Preparação do Dev Setup](https://github.com/Luferat/express.test) || **Criando o Aplicativo** || [Arquivo de Configuração →](https://github.com/Luferat/express.test/tree/Atividade.02_Arquivo_de_configura%C3%A7%C3%A3o)
