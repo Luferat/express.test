@@ -10,7 +10,17 @@ Antes de seguir as próximas etapas, verifique se preparou o [arquivo de configu
 >
 > Como, a partir de agora, nossas requisições retornarão dados no formato JSON, é importante usar o [Postman](https://www.postman.com/) para executar os testes. As instruções para instalação dele [estão aqui](https://docs.google.com/document/d/1Zo42HZvGtEAx-9OjLX5Cr9J5SKl07NvUxLGSTSbWHpc/edit?usp=sharing).
 
-Antes de criarmos os métodos que vão responder às requisições HTTP, vamos criar um método para executá-las:
+### Versionando
+ - Abra / retorne ao GitHub Desktop;
+ - Confirme se o branch da última atividade está ativo → Por exemplo `2023.02.11.Configuracao`;
+   - *O novo branch será criado à partir do branch anterior, já que estamos "incrementando" o aplicativo com novos recursos.*
+ - Clique no menu Branch → New branch...;
+ - Nomeie o branch da melhor forma, por exemplo: `2023.02.11.Verbos_HTTP`;
+ - Clique no botão [Create branch].
+ 
+### Respondendo às requisições 
+
+Antes de criarmos os métodos que vão receber às requisições HTTP, vamos criar um método para responder à elas quando ocorrerem. Esse método serve apenas para testar as capacidades do Express HTTP e será posteriormente substituído pelos métodos adequados à cada requisição:
 
  - Pelo **VSCode**, abra o arquivo `index.js`;
  - Localize a linha onde obtemos a configuração com o nome do aplicativo:
@@ -85,5 +95,14 @@ Para ter resultados melhores, inicie o **Postman**, abra uma nova sessão e aces
 
 Analise a resposta da requisição `GET`, observando os valores das diversas chaves do JSON recebidas e que, ná prática, constam do cabeçalho HTTP da requisição. Tente explicar cada uma dessas chaves e seus valores, pesquisando na Web sobre os cabeçalhos HTTP.
 
+## Salve a Atividade
+
+ - Volte ao GitHub Desktop;
+ - Observe a coluna esquerda, onde aparecem as alterações salvas no Git stage;
+ - No final, escreva a mensagem de Git commit no campo menor;
+ - Opcionalmente, você pode inserir uma descrição mais detalhada deste commit no campo maior.
+ - Clique no botão [Commit to...] logo abaixo da mensagem;
+ - No painel principal, clique no botão [Pull origin] para salvar branch atual no GitHub.com.
+
 ---
-[← Arquivo de Configuração](https://github.com/Luferat/express.test/tree/Atividade.02_Arquivo_de_configura%C3%A7%C3%A3o) || **Verbos HTTP** || Verbos HTTP (getAll e getOne) →
+[← Arquivo de Configuração](https://github.com/Luferat/express.test/tree/Atividade.02_Arquivo_de_configura%C3%A7%C3%A3o) || **Verbos HTTP** || [Verbos HTTP (getAll e getOne) →](https://github.com/Luferat/express.test/tree/Atividade.04_Verbos_HTTP_GET)
