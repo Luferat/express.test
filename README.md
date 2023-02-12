@@ -31,19 +31,21 @@ Antes de tudo, prepare o setup de desenvolvimento, conforme a descrição [deste
  - Navegue até a pasta do projeto, criada pelo **GitHub Desktop** acima;
    - Use o comando `cd` e a tecla `[Tab]` para navegar entre as pastas.
  - Use o comando `npm init` para criar o projeto;
- - Preencha os dados solicitados com atenção;
+ - Preencha e/ou aceite os dados solicitados com atenção;
    - *Será criado um arquivo `package.json` com todos os dados do projeto que você inseriu.*
  - Instale as dependências iniciais, comandando:
+
 ```
 npm install express --save
 npm install nodemon --save
 ```
 
-> **Atividades complementares de pesquisa:**
->  1. O que são essas dependências? Para que serve cada uma?
->  2. Onde essas dependências foram instaladas?
->  2. Por que usamos o parâmetro `--save` na instalação delas?
+### Atividades de Reforço
+1. O que são essas dependências? Para que serve cada uma?
+2. Onde essas dependências foram instaladas?
+3. Por que usamos o parâmetro `--save` na instalação delas?
 
+### Criado os arquivos → VSCode
  - Abra o VSCode, comandando `code .`;
    - Caso o comando não funcione, revise a [instalação do VSCode](https://docs.google.com/file/d/1Zo42HZvGtEAx-9OjLX5Cr9J5SKl07NvUxLGSTSbWHpc).
  - Crie o arquivo `index.js` com o seguinte conteúdo ([referências](https://expressjs.com/pt-br/starter/hello-world.html)):
@@ -67,7 +69,7 @@ O resultado deve ser a mensagem "**Olá Mundo!**" exibida no navegador.
 
 > O aplicativo inicia um servidor e escuta a porta `3000` por conexões. Quando ocorrer uma (request), ele responde com “Olá Mundo!” à solicitações para a URL raiz (`/`) ou _rota_. Para todos os outros caminhos, ele irá responder com um **404 Não Encontrado**.
 
-### Atividade de Reforço
+### Atividades de Reforço
 Volte ao VSCode e, com base em pesquisas, adicione um comentário (`//`) acima de cada linha de código, explicando de forma bem resumida o que ela faz no aplicativo. Veja o exemplo, onde já comentamos a primeira instrução:
 ```
 // Importa a biblioteca "Express.js" e a atribui para a constante "express".
