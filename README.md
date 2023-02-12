@@ -6,6 +6,11 @@ Antes de tudo, prepare o setup de desenvolvimento, conforme a descrição [deste
 
 ## Criando aplicativo
  - Abra um "**Node.js command prompt**";
+ - Navegue até a pasta onde a pasta do projeto será criada;
+   - Use o comando `cd` e a tecla `[Tab]` para navegar entre as pastas.
+
+
+
  - Comande `echo %homedrive%%homepath%`, selecione e copie o resultado;
     - *Este será o caminho da sua pasta de usuário do sistema.*
  - Abra o **GitHub Desktop** e logue-se, se necessário;
@@ -15,8 +20,7 @@ Antes de tudo, prepare o setup de desenvolvimento, conforme a descrição [deste
  - Na popup "Create a new repository", preencha os dados:
     - Name → `express.test`
     - Description → `Aplicativo experimental usando Node.js, Express.js e MySQL.`
-    - Local path → 
-       - Preencha o campo acima com o caminho absoluto onde o projeto será criado. Se necessário, troque o endereço da pasta.
+    - Local path → (Cole o caminho da sua pasta de usuário aqui)\Documents\NodeProjects
 
 
  - Abra um "**Node.js command prompt**";
