@@ -1,4 +1,5 @@
 
+
 # express.test
 Aplicativo experimental em Node.js, Express e MySQL.
 
@@ -83,9 +84,8 @@ Para ter resultados melhores, inicie o **Postman**, abra uma nova sessão e aces
 ```
 
 
-> **Atividade Complementar**
->  
-> Analise a resposta  da requisição, observando os valores das diversas chaves do JSON recebidas, observando que elas constam do cabeçalho HTTP da requisição. Tente explicar cada uma dessas chaves e seus valores, pesquisando na Web sobre os cabeçalhos HTTP.
+### Atividade de Reforço
+Analise a resposta  da requisição, observando os valores das diversas chaves do JSON recebidas, observando que elas constam do cabeçalho HTTP da requisição. Tente explicar cada uma dessas chaves e seus valores, pesquisando na Web sobre os cabeçalhos HTTP.
 
 ---
 [← Arquivo de Configuração](https://github.com/Luferat/express.test/tree/Atividade.02_Arquivo_de_configura%C3%A7%C3%A3o) || **Verbos HTTP** || Verbos HTTP (getAll e getOne) →
