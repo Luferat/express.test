@@ -6,73 +6,62 @@ Antes de seguir as próximas etapas, verifique se preparou o [arquivo de configu
 
 ## Verbos HTTP
 
-> **Importante!**
->
-> Como, a partir de agora, nossas requisições retornarão dados no formato JSON, é importante usar o [Postman](https://www.postman.com/) para executar os testes. As instruções para instalação dele [estão aqui](https://docs.google.com/document/d/1Zo42HZvGtEAx-9OjLX5Cr9J5SKl07NvUxLGSTSbWHpc/edit?usp=sharing).
+Se ainda não configurou o aplicativo para usar as rotas dos métodos HTTP, [volte e siga os passos](https://github.com/Luferat/express.test/tree/Atividade.03_Verbos_HTTP).
 
-Antes de criarmos os métodos que vão responder às requisições HTTP, vamos criar um método para executá-las:
+## Passando Parâmetros pelas Rotas
 
- - Pelo **VSCode**, abra o arquivo `index.js`;
- - Localize a linha onde obtemos a configuração com o nome do aplicativo:
+Quando precisamos obter um registro único, seja para exibí-lo, editá-lo o apagá-lo, a melhor forma e mais simples de identificá-lo é passar seu "ID" pela própria rota da requisição.
+
+### Versionando
+
+ - Abra / retorne ao GitHub Desktop;
+ - Confirme se o branch da última atividade está ativo → Por exemplo `2023.02.11.Verbos_HTTP`;
+   - *O novo branch será criado à partir do branch anterior, já que estamos "incrementando" o aplicativo com novos recursos.*
+ - Clique no menu Branch → New branch...;
+ - Nomeie o branch da melhor forma, por exemplo: `2023.02.11.Rotas_com_parametros`;
+ - Clique no botão [Create branch].
+
+### Criando as Rotas
+
+Vamos criar duas rotas que precisam de, pelo menos, um parâmetro, as rotas dos métodos "GET" e "DELETE". Esse parâmetro será o ID do registro a ser operado pelo aplicativo.
+
+ - Abra / retorne ao o VSCode do projeto;
+ - Abra o arquivo `index.js`;
+ - Localize o ponto onde inserimos o método `app.get()`;
+ - Adicione logo abaixo a nova rota para "GET", só que, desta vez, esperando o parâmetro ID;
+ - Adicone também a rota para "DELETE";
+ - Teremos algo como:
+
 ```
-// Configuração do nome do aplicativo.
-const  appName = conf.APP_NAME;
-```
- - Logo abaixo dela, adicione o trecho de código abaixo:
-```
-// Ação a ser executada quando ocorre uma requisição HTTP.
-const controller = {
+•••
 
-  resJson: async (req, res) => {
-
-    // Lista com alguns atributos úteis da requisição HTTP:
-    data = {
-      "method": req.method,
-      "url": req.url,
-      "baseUrl": req.baseUrl,
-      "query": req.query,
-      "originalURL": req.originalUrl,
-      "params": req.params,
-      "body": req.body,
-      "headers": req.headers
-    }
-
-    // Envia dados na forma de texto (text/html).
-    //res.send(data);
-
-    // Envia dados na forma de JSON.
-    res.json(data);
-
-  }
-}
-```
-
-> Esse trecho cria um  objeto `controller` com um método assíncrono `resJson` que vai gerar uma lista de atributos (`data`) que podemos usar, vindos com a requisição HTTP. O comando `res.json(data)` envia o conteúdo de `data` para o solicitante, no formato JSON.
- - Altere o método `app.get(...)` para executar o método `controller.resJson` que definimos acima:
-```
 // Rota para as requisições do método "GET".
 app.get('/', controller.resJson);
-```
-Para testar, confirme se o serviço do aplicativo ainda está rodando no Node.js command prompt. Se necessário, encerre o serviço teclando `[Ctrl]+[C]` e logo em seguida, comande `nodemon index.js` para iniciá-lo mais uma vez.
 
-Agora, no navegador, acesse o endereço `http://localhost:3000/`. A resposta deve ser um trecho JSON, parecido com:
+// Rota para as requisições do método "GET" com parâmetro "id".
+app.get('/:id', controller.resJson);
+
+// Rota para as requisições do método "DELETE" com parâmetro "id".
+app.delete('/:id', controller.resJson);
+
+•••
 ```
-{"method":"GET","url":"/","baseUrl":"","query":{},"originalURL":"/","params":{},"headers":{"host":"localhost:3000","connection":"keep-alive","cache-control":"max-age=0","sec-ch-ua":"\"Not_A Brand\";v=\"99\", \"Google Chrome\";v=\"109\", \"Chromium\";v=\"109\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","upgrade-insecure-requests":"1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9","sec-fetch-site":"none","sec-fetch-mode":"navigate","sec-fetch-user":"?1","sec-fetch-dest":"document","accept-encoding":"gzip, deflate, br","accept-language":"pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7","if-none-match":"W/\"34-BXkHmUBy53s5lhskMYjesmM7Xo8\""}}
-```
-Para ter resultados melhores, inicie o **Postman**, abra uma nova sessão e acesse o endereço `http://localhost:3000/` usando o método "GET". O resultado será bem melhor do que o obtido no navegador, e deve ser algo como:
+Use o **Postman** para testar uma requisição "GET" para o endereço `http://localhost:3000/10`, por exemplo, e observe os resultados devolvidos pelo servidor:
 ```
 {
     "method": "GET",
-    "url": "/",
+    "url": "/10",
     "baseUrl": "",
     "query": {},
-    "originalURL": "/",
-    "params": {},
+    "originalURL": "/10",
+    "params": {
+        "id": "10"
+    },
     "headers": {
         "content-type": "application/json",
         "user-agent": "PostmanRuntime/7.30.1",
         "accept": "*/*",
-        "postman-token": "fb36ad9f-4695-4271-bafe-4d2cb59792ef",
+        "postman-token": "66d08d0c-19dc-45da-b8e1-ee63ea9ebad9",
         "host": "localhost:3000",
         "accept-encoding": "gzip, deflate, br",
         "connection": "keep-alive",
@@ -83,7 +72,20 @@ Para ter resultados melhores, inicie o **Postman**, abra uma nova sessão e aces
 
 ### Atividade de Reforço
 
-Analise a resposta da requisição `GET`, observando os valores das diversas chaves do JSON recebidas e que, ná prática, constam do cabeçalho HTTP da requisição. Tente explicar cada uma dessas chaves e seus valores, pesquisando na Web sobre os cabeçalhos HTTP.
+1. Usando o **Postman**, faça requisições "GET" sem o parâmetro (`http://localhost:3000/`) e com o parâmetro "ID" (`http://localhost:3000/10`) e compare as duas, tentando identificar as diferenças e similaridades entre elas.
+2. Como poderiamos "isolar" o valor do "ID" da requisição para usá-lo por exemplo, em uma consulta "SQL"?
+3. Usando o **Postman**, faça requisições "DELETE" sem o parâmetro (`http://localhost:3000/`) e com o parâmetro "ID" (`http://localhost:3000/10`). Por que as requisições "DELETE" sem o "ID" não são bem sucedidas?
+
+
+
+## Salve a Atividade
+
+ - Volte ao GitHub Desktop;
+ - Observe a coluna esquerda, onde aparecem as alterações salvas no Git stage;
+ - No final, escreva a mensagem de Git commit no campo menor;
+ - Opcionalmente, você pode inserir uma descrição mais detalhada deste commit no campo maior.
+ - Clique no botão [Commit to...] logo abaixo da mensagem;
+ - No painel principal, clique no botão [Pull origin] para salvar branch atual no GitHub.com.
 
 ---
-[← Arquivo de Configuração](https://github.com/Luferat/express.test/tree/Atividade.02_Arquivo_de_configura%C3%A7%C3%A3o) || **Verbos HTTP** || Verbos HTTP (getAll e getOne) →
+[← Verbos HTTP](https://github.com/Luferat/express.test/tree/Atividade.03_Verbos_HTTP) || **Rotas com Parâmetros** || [Próxima →](https://github.com/Luferat/express.test/tree/)
