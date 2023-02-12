@@ -20,21 +20,19 @@ Antes de tudo, prepare o setup de desenvolvimento, conforme a descrição [deste
     - Git ignore → `Node`
     - License: `MIT License`
  - Confira os dados com atenção e clique em [Create repository];
+ - Na tela inicial do repositório, clique em [Publish repository];
+ - Se necessário, edite os valores de `Name` e `Description`;
+ - Desmarque a caixa `Keep this code private`;
+ - Clique em [Publish repository];
  
- 
+ ## Aplicativo
  
  - Abra um "**Node.js command prompt**";
- - Navegue até a pasta onde a pasta do projeto será criada;
+ - Navegue até a pasta do projeto, criada pelo **GitHub Desktop** acima;
    - Use o comando `cd` e a tecla `[Tab]` para navegar entre as pastas.
- - Crie a pasta do projeto e entre nela;
-   - Use o comando `mkdir` para criar a pasta e o comando `cd` para entrar nela:
-```
-mkdir express.test
-cd express.test
-```
  - Use o comando `npm init` para criar o projeto;
  - Preencha os dados solicitados com atenção;
-   - Será criado um arquivo `package.json` com todos os dados do projeto que você inseriu;
+   - *Será criado um arquivo `package.json` com todos os dados do projeto que você inseriu.*
  - Instale as dependências iniciais, comandando:
 ```
 npm install express --save
