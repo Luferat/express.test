@@ -23,7 +23,7 @@ As tarefas mais complicadas que vamos realizar nas transações HTTP certamente 
 Na prática, receber dados via HTTP não é complexo, até porque o Express lida com isso muito bem. Precisamos primeiro, determinar como esses dados se apresentaram ao servidor. Como estamos tratando aqui de uma [API](https://pt.wikipedia.org/wiki/Interface_de_programa%C3%A7%C3%A3o_de_aplica%C3%A7%C3%B5es) [REST](https://pt.wikipedia.org/wiki/REST), certamente esses dados chegarão na forma de [JSON](https://pt.wikipedia.org/wiki/JSON). O primeiro passo então é extrair o que nos interessa, deste JSON:
 
  - Abra o arquivo `index.js` no **VSCode**;
- - Localize as rotas "GET" e "DELETE" que inserimos e, logo acima delas, adicione as linhas abaixo:
+ - Localize as rotas "GET" e "DELETE" que inserimos antes e, logo acima delas, adicione as linhas abaixo:
  
 ```
 // Extrai os dados do cabeçalho da requisição usando "JSON".
