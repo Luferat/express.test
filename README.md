@@ -1,9 +1,6 @@
 # express.test
 Aplicativo experimental em Node.js, Express e MySQL.
 
-## Arquivo de Configuração
-Antes de seguir as próximas etapas, verifique se preparou o [arquivo de configuração](https://github.com/Luferat/express.test/tree/Atividade.02_Arquivo_de_configura%C3%A7%C3%A3o).
-
 ## Passando Parâmetros pelas Rotas
 
 Para que você possa fazer essa atividade é necessário que todas as atividades anteriores tenham sido executadas. Se não tem certeza, retorne à [atividade anterior](https://github.com/Luferat/express.test/tree/Atividade.04_Verbos_HTTP_GET) e reveja todos os conceitos.
