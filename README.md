@@ -73,6 +73,8 @@ Use o **Postman** para testar uma requisição "GET" para o endereço `http://lo
 ### Atividade de Reforço
 
 1. Usando o **Postman**, faça requisições "GET" sem o parâmetro (`http://localhost:3000/`) e com o parâmetro "ID" (`http://localhost:3000/10`) e compare as duas, tentando identificar as diferenças e similaridades entre elas.
+2. Como poderiamos "isolar" o valor do "ID" da requisição para usá-lo por exemplo, em uma consulta "SQL"?
+3. Usando o **Postman**, faça requisições "DELETE" sem o parâmetro (`http://localhost:3000/`) e com o parâmetro "ID" (`http://localhost:3000/10`). Por que as requisições "DELETE" sem o "ID" não são bem sucedidas?
 
 
 
@@ -86,4 +88,4 @@ Use o **Postman** para testar uma requisição "GET" para o endereço `http://lo
  - No painel principal, clique no botão [Pull origin] para salvar branch atual no GitHub.com.
 
 ---
-[← Arquivo de Configuração](https://github.com/Luferat/express.test/tree/Atividade.02_Arquivo_de_configura%C3%A7%C3%A3o) || **Verbos HTTP** || Verbos HTTP (getAll e getOne) →
+[← Verbos HTTP](https://github.com/Luferat/express.test/tree/Atividade.03_Verbos_HTTP) || **Rotas com Parâmetros** || [Próxima →](https://github.com/Luferat/express.test/tree/)
