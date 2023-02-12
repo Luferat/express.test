@@ -55,7 +55,7 @@ app.get('/', controller.resJson);
 ```
 Para testar, confirme se o serviço do aplicativo ainda está rodando no Node.js command prompt. Se necessário, encerre o serviço teclando `[Ctrl]+[C]` e logo em seguida, comande `nodemon index.js` para iniciá-lo mais uma vez.
 
-Agora, no navegador, acesse o endereço `http://localhost:3000/`. A resposta deve ser um trecho JSON.
+Agora, no navegador, acesse o endereço `http://localhost:3000/`. A resposta deve ser um trecho JSON, parecido com:
 ```
 {"method":"GET","url":"/","baseUrl":"","query":{},"originalURL":"/","params":{},"headers":{"host":"localhost:3000","connection":"keep-alive","cache-control":"max-age=0","sec-ch-ua":"\"Not_A Brand\";v=\"99\", \"Google Chrome\";v=\"109\", \"Chromium\";v=\"109\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","upgrade-insecure-requests":"1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9","sec-fetch-site":"none","sec-fetch-mode":"navigate","sec-fetch-user":"?1","sec-fetch-dest":"document","accept-encoding":"gzip, deflate, br","accept-language":"pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7","if-none-match":"W/\"34-BXkHmUBy53s5lhskMYjesmM7Xo8\""}}
 ```
@@ -81,12 +81,9 @@ Para ter resultados melhores, inicie o **Postman**, abra uma nova sessão e aces
 }
 ```
 
-
 ### Atividade de Reforço
-Analise a resposta  da requisição, observando os valores das diversas chaves do JSON recebidas, observando que elas constam do cabeçalho HTTP da requisição. Tente explicar cada uma dessas chaves e seus valores, pesquisando na Web sobre os cabeçalhos HTTP.
+
+Analise a resposta da requisição `GET`, observando os valores das diversas chaves do JSON recebidas e que, ná prática, constam do cabeçalho HTTP da requisição. Tente explicar cada uma dessas chaves e seus valores, pesquisando na Web sobre os cabeçalhos HTTP.
 
 ---
 [← Arquivo de Configuração](https://github.com/Luferat/express.test/tree/Atividade.02_Arquivo_de_configura%C3%A7%C3%A3o) || **Verbos HTTP** || Verbos HTTP (getAll e getOne) →
-
-
-
