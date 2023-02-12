@@ -7,7 +7,7 @@ Antes de seguir em frente, revise as etapas de [criação do aplicativo](https:/
 
 ## Arquivo de Configuração
 
-Para facilitar a configuração do aplicativo, vamos usar a biblioteca [dotenv](https://github.com/motdotla/dotenv). Com base nos procedimentos da documentação oficial:
+Para facilitar a configuração do aplicativo, vamos usar a biblioteca [dotenv](https://github.com/motdotla/dotenv). 
 
 ### Versionando
 
@@ -18,6 +18,8 @@ Para facilitar a configuração do aplicativo, vamos usar a biblioteca [dotenv](
  - Clique no botão [Create branch].
 
 ### Dependências
+
+Com base nos procedimentos da documentação oficial:
 
  - Abra / retorne ao **Node.js command prompt** do projeto;
  - Instale a dependência, comandando:
@@ -64,7 +66,10 @@ app.listen(port, () => {
 > *Lembre-se de manter um backup seguro destes arquivos.*
 
 ### Atividade de Reforço
-Edite as configurações do aplicativo para que, de forma experimental, o arquivo `.env`, que contém as configurações básicas do aplicativ, seja enviado para o repositório **Origin** do Git, no nosso caso, para o GitHub.com.
+
+1. Estude o repositório da biblioteca **dotenv** para aprender mais sobre ela: sua utilidade, suas capacidades, usos clássicos e alternativos, como usá-la no versionamento **DevOps**...
+
+2. Edite as configurações do aplicativo para que, de forma experimental, o arquivo `.env`, que contém as configurações básicas do aplicativ, seja enviado para o repositório **Origin** do Git, no nosso caso, para o GitHub.com.
 
 ---
 [← Criando o Aplicativo](https://github.com/Luferat/express.test/tree/Atividade.01_Criando_o_Aplicativo) || **Arquivo de Configuração** || [Verbos HTTP →](https://github.com/Luferat/express.test/tree/Atividade.03_Verbos_HTTP)
