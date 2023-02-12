@@ -84,7 +84,7 @@ Para ter resultados melhores, inicie o **Postman**, abra uma nova sessão e aces
 
 
 > **Atividade Complementar**
-> 
+>  
 > Analise a resposta  da requisição, observando os valores das diversas chaves do JSON recebidas, observando que elas constam do cabeçalho HTTP da requisição. Tente explicar cada uma dessas chaves e seus valores, pesquisando na Web sobre os cabeçalhos HTTP.
 
 ---
