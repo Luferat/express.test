@@ -71,6 +71,15 @@ O resultado deve ser a mensagem "**Olá Mundo!**" exibida no navegador.
 
 > O aplicativo inicia um servidor e escuta a porta `3000` por conexões. Quando ocorrer uma (request), ele responde com “Olá Mundo!” à solicitações para a URL raiz (`/`) ou _rota_. Para todos os outros caminhos, ele irá responder com um **404 Não Encontrado**.
 
+### Salve a Atividade
+
+ - Volte ao **GitHub Desktop**;
+ - Observe a coluna esquerda, onde aparecem as alterações salvas no *Git stage*;
+ - No final, escreva a mensagem de *Git commit* no campo menor;
+   - *Opcionalmente, você pode inserir uma descrição mais detalhada deste commit no campo maior.*
+ - Clique no botão [Commit to...] logo abaixo da mensagem;
+ - No painel principal, clique no botão [Pull origin] para salvar branch atual no GitHub.com.
+
 ### Atividades de Reforço
 Volte ao VSCode e, com base em pesquisas, adicione um comentário (`//`) acima de cada linha de código, explicando de forma bem resumida o que ela faz no aplicativo. Veja o exemplo, onde já comentamos a primeira instrução:
 ```
