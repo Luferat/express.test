@@ -1,4 +1,3 @@
-
 # express.test
 Aplicativo experimental em Node.js, Express e MySQL.
 
@@ -26,7 +25,7 @@ Com base nos procedimentos da documentação oficial:
 
 ```npm install dotenv --save```
 
-### Implemendando
+### Implementando
 
  - Abra / retorne ao **VSCode** do projeto;
  - Crie um novo arquivo `.env`, na raiz do projeto e adicione o seguinte conteúdo:
@@ -69,7 +68,7 @@ app.listen(port, () => {
 
 1. Estude o repositório da biblioteca **dotenv** para aprender mais sobre ela: sua utilidade, suas capacidades, usos clássicos e alternativos, como usá-la no versionamento **DevOps**...
 
-2. Edite as configurações do aplicativo para que, de forma experimental, o arquivo `.env`, que contém as configurações básicas do aplicativ, seja enviado para o repositório **Origin** do Git, no nosso caso, para o GitHub.com.
+2. Edite as configurações do aplicativo para que, de forma experimental, o arquivo `.env`, que contém as configurações básicas do aplicativo, seja enviado para o repositório **Origin** do Git, no nosso caso, para o GitHub.com.
 
 ---
 [← Criando o Aplicativo](https://github.com/Luferat/express.test/tree/Atividade.01_Criando_o_Aplicativo) || **Arquivo de Configuração** || [Verbos HTTP →](https://github.com/Luferat/express.test/tree/Atividade.03_Verbos_HTTP)
