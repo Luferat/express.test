@@ -24,7 +24,8 @@ const controller = {
       "originalURL": req.originalUrl,
       "params": req.params,
       "body": req.body,
-      "headers": req.headers
+      "headers": req.headers,
+      "id": req.params.id
     }
 
     // Envia dados na forma de texto (text/html).
@@ -41,6 +42,9 @@ app.get('/', controller.resJson);
 
 // Rota para as requisições do método "GET" com parâmetro "id".
 app.get('/:id', controller.resJson);
+
+// Rota para as requisições do método "DELETE" com parâmetro "id".
+app.delete('/:id', controller.resJson);
 
 app.listen(port, () => {
   console.log(`Executando servidor em http://localhost:${port}`);
