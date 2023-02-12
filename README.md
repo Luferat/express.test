@@ -4,78 +4,108 @@ Aplicativo experimental em Node.js, Express e MySQL.
 ## Arquivo de Configuração
 Antes de seguir as próximas etapas, verifique se preparou o [arquivo de configuração](https://github.com/Luferat/express.test/tree/Atividade.02_Arquivo_de_configura%C3%A7%C3%A3o).
 
-## Verbos HTTP
-
-Se ainda não configurou o aplicativo para usar as rotas dos métodos HTTP, [volte e siga os passos](https://github.com/Luferat/express.test/tree/Atividade.03_Verbos_HTTP).
-
 ## Passando Parâmetros pelas Rotas
 
-Quando precisamos obter um registro único, seja para exibí-lo, editá-lo o apagá-lo, a melhor forma e mais simples de identificá-lo é passar seu "ID" pela própria rota da requisição.
+Para que você possa fazer essa atividade é necessário que todas as atividades anteriores tenham sido executadas. Se não tem certeza, retorne à [atividade anterior](https://github.com/Luferat/express.test/tree/Atividade.04_Verbos_HTTP_GET) e reveja todos os conceitos.
+
+## Lidando com Dados Complexos
+
+As tarefas mais complicadas que vamos realizar nas transações HTTP certamente são as que precisam receber dados de fora, no caso "POST" e "PUT". Isso porque, além de garantir que esses dados foram recebidos, temos que garantir que eles são seguros o suficiente para serem, por exemplo, armazenados em um banco de dados.
 
 ### Versionando
 
  - Abra / retorne ao GitHub Desktop;
- - Confirme se o branch da última atividade está ativo → Por exemplo `2023.02.11.Verbos_HTTP`;
-   - *O novo branch será criado à partir do branch anterior, já que estamos "incrementando" o aplicativo com novos recursos.*
+ - Confirme se o branch da última atividade está ativo → Por exemplo `2023.02.11.Rotas_com_parametros`;
+   - *O novo branch será criado a partir do branch anterior, já que estamos "incrementando" o aplicativo com novos recursos.*
  - Clique no menu Branch → New branch...;
- - Nomeie o branch da melhor forma, por exemplo: `2023.02.11.Rotas_com_parametros`;
+ - Nomeie o branch da melhor forma, por exemplo: `2023.02.11.Verbos_POST_PUT`;
  - Clique no botão [Create branch].
 
-### Criando as Rotas
+### Processando os Dados Recebidos
 
-Vamos criar duas rotas que precisam de, pelo menos, um parâmetro, as rotas dos métodos "GET" e "DELETE". Esse parâmetro será o ID do registro a ser operado pelo aplicativo.
+Na prática, receber dados via HTTP não é complexo, até porque o Express lida com isso muito bem. Precisamos primeiro, determinar como esses dados se apresentaram ao servidor. Como estamos tratando aqui de uma API REST, certamente esses dados chegarão na forma de JSON. O primeiro passo então é extrair o que nos interessa, deste JSON:
 
- - Abra / retorne ao o VSCode do projeto;
- - Abra o arquivo `index.js`;
- - Localize o ponto onde inserimos o método `app.get()`;
- - Adicione logo abaixo a nova rota para "GET", só que, desta vez, esperando o parâmetro ID;
- - Adicone também a rota para "DELETE";
- - Teremos algo como:
+ - Abra o arquivo `index.js` no **VSCode**;
+ - Localize as rotas "GET" e "DELETE" que inserimos e, logo acima delas, adicione as linhas abaixo:
+ 
+```
+// Extrai os dados do cabeçalho da requisição usando "JSON".
+const bodyParser = require('body-parser').json(); 
+```
+
+A biblioteca "body-parser" que acompanha o "Express.js" que é responsável por extrair os dados do HTTP da forma correta na forma de JSON.
+
+Em outra situação, se precisasse extrair os dados vindos diretamente de um formulário HTML, por exemplo, poderíamos usar:
 
 ```
+// Extrai os dados do cabeçalho da requisição usando "URL ENCODED".
+const bodyParser = require('body-parser').urlencoded();
+```
+
+O formato "URL ENCODED", apesar de ser mais comum, pode não ser recomendado porque provavelmente não passou por um tratamento prévio como uma sanitização ou validação. No caso do JSON, o cliente deve estar preparado e consumir alguns recursos de máquina a mais para gerar e enviar os dados neste formato que, por se tratar de "texto plano" é um pouco mais seguro.
+
+### Implementando as Rotas
+
+O que precisamos fazer é adicionar `bodyParser` no "gancho" (hook) das rotas que recebem dados, de forma a que esses dados sejam entregues pela requisição, já previamente formatados:
+
+ - Ainda no **VSCode**, editando `index.js`;
+ - Localize os métodos `app.get()` e `app.delete()` já implementados;
+ - Logo abaixo deles, adicione os novos métodos:
+```
 •••
+// Rota para as requisições do método "POST".
+app.post('/', bodyParser, controller.resJson);
 
-// Rota para as requisições do método "GET".
-app.get('/', controller.resJson);
-
-// Rota para as requisições do método "GET" com parâmetro "id".
-app.get('/:id', controller.resJson);
-
-// Rota para as requisições do método "DELETE" com parâmetro "id".
-app.delete('/:id', controller.resJson);
-
+// Rota para as requisições do método "PUT" com parâmetro "id".
+app.put('/:id', bodyParser, controller.resJson);
 •••
 ```
-Use o **Postman** para testar uma requisição "GET" para o endereço `http://localhost:3000/10`, por exemplo, e observe os resultados devolvidos pelo servidor:
+Observe que adicionamos `bodyParser` no segundo parâmetro dos métodos, indicando justamente os "hooks" destes métodos.
+
+### Testando
+
+ - Pelo **Postman**, crie uma nova sessão apontando para a URL `http://localhost:3000/`;
+ - Chaveie para o método "POST", pois enviaremos dados para o servidor;
+ - Configure a requisição para "Body", do tipo "raw"no formato "JSON";
+ - Escreva o JSON no campo de dados, por exemplo:
+ ```
+ {
+    "name": "Joca",
+    "email": "joca@silva.com",
+    "age": "31"
+}
+```
+ - Envie, clicando em [Send];
+ 
+Observe que a resposta agora inclui o atributo "body" com os dados que foram enviados no JSON da requisição.
+
 ```
 {
-    "method": "GET",
-    "url": "/10",
+    "method": "POST",
+    "url": "/",
     "baseUrl": "",
     "query": {},
-    "originalURL": "/10",
-    "params": {
-        "id": "10"
+    "originalURL": "/",
+    "params": {},
+    "body": {
+        "name": "Joca",
+        "email": "joca@silva.com",
+        "age": "31"
     },
     "headers": {
         "content-type": "application/json",
         "user-agent": "PostmanRuntime/7.30.1",
         "accept": "*/*",
-        "postman-token": "66d08d0c-19dc-45da-b8e1-ee63ea9ebad9",
+        "postman-token": "494fe34f-5c43-4e55-abad-6c7bcb99be23",
         "host": "localhost:3000",
         "accept-encoding": "gzip, deflate, br",
         "connection": "keep-alive",
-        "content-length": "42"
+        "content-length": "74"
     }
 }
 ```
 
 ### Atividade de Reforço
-
-1. Usando o **Postman**, faça requisições "GET" sem o parâmetro (`http://localhost:3000/`) e com o parâmetro "ID" (`http://localhost:3000/10`) e compare as duas, tentando identificar as diferenças e similaridades entre elas.
-2. Como poderiamos "isolar" o valor do "ID" da requisição para usá-lo por exemplo, em uma consulta "SQL"?
-3. Usando o **Postman**, faça requisições "DELETE" sem o parâmetro (`http://localhost:3000/`) e com o parâmetro "ID" (`http://localhost:3000/10`). Por que as requisições "DELETE" sem o "ID" não são bem sucedidas?
-
 
 
 ## Salve a Atividade
