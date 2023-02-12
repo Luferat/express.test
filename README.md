@@ -5,5 +5,6 @@ Aplicativo experimental em Node.js, Express e MySQL.
 Prepare o setup de desenvolvimento, conforme a descrição [deste link](https://docs.google.com/file/d/1Zo42HZvGtEAx-9OjLX5Cr9J5SKl07NvUxLGSTSbWHpc).
 
 ---
+
 #### Navegação
-← Preparação do Setup ||  [Criando o Aplicativo →](https://github.com/Luferat/express.test/tree/Atividade.01_Criando_o_Aplicativo)
+← Início || **Preparação do Dev Setup** || [Criando o Aplicativo →](https://github.com/Luferat/express.test/tree/Atividade.01_Criando_o_Aplicativo)
