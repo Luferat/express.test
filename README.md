@@ -70,5 +70,14 @@ app.listen(port, () => {
 
 2. Edite as configurações do aplicativo para que, de forma experimental, o arquivo `.env`, que contém as configurações básicas do aplicativo, seja enviado para o repositório **Origin** do Git, no nosso caso, para o GitHub.com.
 
+## Salve a Atividade
+
+ - Volte ao GitHub Desktop;
+ - Observe a coluna esquerda, onde aparecem as alterações salvas no Git stage;
+ - No final, escreva a mensagem de Git commit no campo menor;
+ - Opcionalmente, você pode inserir uma descrição mais detalhada deste commit no campo maior.
+ - Clique no botão [Commit to...] logo abaixo da mensagem;
+ - No painel principal, clique no botão [Pull origin] para salvar branch atual no GitHub.com.
+
 ---
 [← Criando o Aplicativo](https://github.com/Luferat/express.test/tree/Atividade.01_Criando_o_Aplicativo) || **Arquivo de Configuração** || [Verbos HTTP →](https://github.com/Luferat/express.test/tree/Atividade.03_Verbos_HTTP)
