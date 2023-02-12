@@ -5,24 +5,24 @@ Aplicativo experimental em Node.js, Express e MySQL.
 Antes de tudo, prepare o setup de desenvolvimento, conforme a descrição [deste link](https://docs.google.com/file/d/1Zo42HZvGtEAx-9OjLX5Cr9J5SKl07NvUxLGSTSbWHpc).  
 
 ## Criando aplicativo
- - Abra um "**Node.js command prompt**";
- - Navegue até a pasta onde a pasta do projeto será criada;
-   - Use o comando `cd` e a tecla `[Tab]` para navegar entre as pastas.
 
+### Repositório e Versionamento
 
-
- - Comande `echo %homedrive%%homepath%`, selecione e copie o resultado;
-    - *Este será o caminho da sua pasta de usuário do sistema.*
- - Abra o **GitHub Desktop** e logue-se, se necessário;
+ - Inicie o **GitHub Desktop** e logue-se, se necessário;
     - Menu `File` → `Options` → `Acounts` → [Sign in]
     - *O login é feito pelo navegador padrão, com sua conta **GitHub.com**.*
  - No menu `File`, clique em `New repository...`;
  - Na popup "Create a new repository", preencha os dados:
     - Name → `express.test`
     - Description → `Aplicativo experimental usando Node.js, Express.js e MySQL.`
-    - Local path → (Cole o caminho da sua pasta de usuário aqui)\Documents\NodeProjects
-
-
+    - Local path → (*Digite o caminho <u>onde a pasta do projeto será criada</u> ou tecle [Choose] para selecioná-la.*)
+    - Marque `Initialize this repository with a README`
+    - Git ignore → `Node`
+    - License: `MIT License`
+ - Confira os dados com atenção e clique em [Create repository];
+ 
+ 
+ 
  - Abra um "**Node.js command prompt**";
  - Navegue até a pasta onde a pasta do projeto será criada;
    - Use o comando `cd` e a tecla `[Tab]` para navegar entre as pastas.
@@ -32,7 +32,7 @@ Antes de tudo, prepare o setup de desenvolvimento, conforme a descrição [deste
 mkdir express.test
 cd express.test
 ```
- - Use o comando `npm init` para criar o projeto
+ - Use o comando `npm init` para criar o projeto;
  - Preencha os dados solicitados com atenção;
    - Será criado um arquivo `package.json` com todos os dados do projeto que você inseriu;
  - Instale as dependências iniciais, comandando:
