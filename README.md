@@ -9,7 +9,7 @@ Antes de tudo, prepare o setup de desenvolvimento, conforme a descrição [deste
 ### Repositório e Versionamento
 
  - Inicie o **GitHub Desktop** e logue-se, se necessário;
-    - Menu `File` → `Options` → `Acounts` → [Sign in]
+    - Menu `File` → `Options` → `Accounts` → [Sign in]
     - *O login é feito pelo navegador padrão, com sua conta **GitHub.com**.*
  - No menu `File`, clique em `New repository...`;
  - Na popup "Create a new repository", preencha os dados:
