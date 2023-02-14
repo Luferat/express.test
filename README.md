@@ -26,7 +26,7 @@ Antes de criarmos os métodos que vão receber às requisições HTTP, vamos cri
  - Localize a linha onde obtemos a configuração com o nome do aplicativo:
 ```
 // Configuração do nome do aplicativo.
-const  appName = conf.APP_NAME;
+const appName = conf.APP_NAME;
 ```
  - Logo abaixo dela, adicione o trecho de código abaixo:
 ```
