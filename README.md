@@ -93,7 +93,7 @@ Para ter resultados melhores, inicie o **Postman**, abra uma nova sessão e aces
 
 ### Atividade de Reforço
 
-Analise a resposta da requisição `GET`, observando os valores das diversas chaves do JSON recebidas e que, ná prática, constam do cabeçalho HTTP da requisição. Tente explicar cada uma dessas chaves e seus valores, pesquisando na Web sobre os cabeçalhos HTTP.
+Analise a resposta da requisição `GET`, observando os valores das diversas chaves do JSON recebidas e que, na prática, constam do cabeçalho HTTP da requisição. Tente explicar cada uma dessas chaves e seus valores, pesquisando na Web sobre os cabeçalhos HTTP.
 
 ## Salve a Atividade
 
