@@ -88,4 +88,4 @@ Use o **Postman** para testar uma requisição "GET" para o endereço `http://lo
  - No painel principal, clique no botão [Pull origin] para salvar branch atual no GitHub.com.
 
 ---
-[← Verbos HTTP](https://github.com/Luferat/express.test/tree/Atividade.03_Verbos_HTTP) || **Rotas com Parâmetros** || [Próxima →](https://github.com/Luferat/express.test/tree/)
+[← Verbos HTTP](https://github.com/Luferat/express.test/tree/Atividade.03_Verbos_HTTP) || **Rotas com Parâmetros** || [Verbos POST e PUT →](https://github.com/Luferat/express.test/tree/Atividade.05_Verbos_POST_PUT)
