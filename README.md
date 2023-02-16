@@ -81,7 +81,9 @@ O resultado deve ser a mensagem "**Olá Mundo!**" exibida no navegador.
  - No painel principal, clique no botão [Pull origin] para salvar branch atual no GitHub.com.
 
 ### Atividades de Reforço
+
 Volte ao VSCode e, com base em pesquisas, adicione um comentário (`//`) acima de cada linha de código, explicando de forma bem resumida o que ela faz no aplicativo. Veja o exemplo, onde já comentamos a primeira instrução:
+
 ```
 // Importa a biblioteca "Express.js" e a atribui para a constante "express".
 const express = require('express');
