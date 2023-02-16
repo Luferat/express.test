@@ -11,52 +11,110 @@ const port = conf.HTTPPORT || 3000;
 const appName = conf.APP_NAME;
 
 // Ação a ser executada quando ocorre uma requisição HTTP.
-const controller = {
+const thing = {
 
-  resJson: async (req, res) => {
-
-    // Lista com alguns atributos úteis da requisição HTTP:
+  getAll: async (req, res) => {
     data = {
-      "method": req.method,
-      "url": req.url,
-      "baseUrl": req.baseUrl,
-      "query": req.query,
-      "originalURL": req.originalUrl,
-      "params": req.params,
-      "body": req.body,
-      "headers": req.headers,
-      "id": req.params.id
-    }
-
-    // Envia dados na forma de texto (text/html).
-    //res.send(data);
-
-    // Envia dados na forma de JSON.
+      method: req.method,
+    };
     res.json(data);
+  },
 
+  getOne: async (req, res) => {
+    data = {
+      method: req.method,
+      id: req.params.id
+    };
+    res.json(data);
+  },
+
+  delete: async (req, res) => {
+    data = {
+      method: req.method,
+      id: req.params.id
+    };
+    res.json(data);
+  },
+
+  post: async (req, res) => {
+    data = {
+      method: req.method,
+      body: req.body
+    };
+    res.json(data);
+  },
+
+  put: async (req, res) => {
+    data = {
+      method: req.method,
+      id: req.params.id,
+      body: req.body
+    };
+    res.json(data);
   }
-}
 
-// Extrai os dados do cabeçalho da requisição usando "URL ENCODED".
-// const bodyParser = require('body-parser').urlencoded();
+};
+
+const user = {
+
+  getAll: async (req, res) => {
+    data = {
+      method: req.method,
+    };
+    res.json(data);
+  },
+
+  getOne: async (req, res) => {
+    data = {
+      method: req.method,
+      id: req.params.id
+    };
+    res.json(data);
+  },
+
+  delete: async (req, res) => {
+    data = {
+      method: req.method,
+      id: req.params.id
+    };
+    res.json(data);
+  },
+
+  post: async (req, res) => {
+    data = {
+      method: req.method,
+      body: req.body
+    };
+    res.json(data);
+  },
+
+  put: async (req, res) => {
+    data = {
+      method: req.method,
+      id: req.params.id,
+      body: req.body
+    };
+    res.json(data);
+  }
+
+};
 
 // Extrai os dados do cabeçalho da requisição usando "JSON".
 const bodyParser = require('body-parser').json();
 
-// Rota para as requisições do método "GET".
-app.get('/', controller.resJson);
+// Rotas para as requisições de 'things'.
+app.get('/', thing.getAll);
+app.get('/:id', thing.getOne);
+app.delete('/:id', thing.delete);
+app.post('/', bodyParser, thing.post);
+app.put('/:id', bodyParser, thing.put);
 
-// Rota para as requisições do método "GET" com parâmetro "id".
-app.get('/:id', controller.resJson);
-
-// Rota para as requisições do método "DELETE" com parâmetro "id".
-app.delete('/:id', controller.resJson);
-
-// Rota para as requisições do método "POST".
-app.post('/', bodyParser, controller.resJson);
-
-// Rota para as requisições do método "PUT" com parâmetro "id".
-app.put('/:id', bodyParser, controller.resJson);
+// Rotas para as requisições de 'users'.
+app.get('/user/', user.getAll);
+app.get('/user/:id', user.getOne);
+app.delete('/user/:id', user.delete);
+app.post('/user/', bodyParser, user.post);
+app.put('/user/:id', bodyParser, user.put);
 
 app.listen(port, () => {
   console.log(`Executando servidor em http://localhost:${port}`);
