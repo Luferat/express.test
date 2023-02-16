@@ -4,6 +4,16 @@ const app = express();
 // Obtém configurações do aplicativo.
 const conf = require('dotenv').config().parsed;
 
+
+const mysql = require('mysql2');
+const pool = mysql.createPool({
+  host: conf.HOSTNAME,
+  user: conf.USERNAME,
+  password: conf.PASSWORD,
+  database: conf.DATABASE,
+}).promise();
+
+
 // Configuração da porta do servidor HTTP.
 const port = conf.HTTPPORT || 3000;
 
@@ -14,43 +24,84 @@ const appName = conf.APP_NAME;
 const thing = {
 
   getAll: async (req, res) => {
-    data = {
-      method: req.method,
-    };
-    res.json(data);
+
+    try {
+
+      const [rows] = await pool.query("SELECT * FROM things");
+      res.json({ data: rows });
+
+    } catch (error) {
+
+      res.json({ status: error, message: error });
+
+    }
+
   },
 
   getOne: async (req, res) => {
-    data = {
-      method: req.method,
-      id: req.params.id
-    };
-    res.json(data);
+
+    try {
+
+      const { id } = req.params;
+      const [rows] = await pool.query("SELECT * FROM things WHERE tid = ?", [id]);
+      res.json({ data: rows });
+
+    } catch (error) {
+
+      res.json({ status: error, message: error });
+
+    }
+
   },
 
   delete: async (req, res) => {
-    data = {
-      method: req.method,
-      id: req.params.id
-    };
-    res.json(data);
+
+    try {
+
+      const { id } = req.params
+      const sql = "UPDATE things SET tstatus = 'del' WHERE tid = ?"
+      const [rows] = await pool.query(sql, [id]);
+      res.json({ data: rows });
+
+    } catch (error) {
+
+      res.json({ status: error, message: error });
+
+    }
+
   },
 
   post: async (req, res) => {
-    data = {
-      method: req.method,
-      body: req.body
-    };
-    res.json(data);
+
+    try {
+
+      const { tuser, tname, tphoto, tdescription, tlocation, toptions } = req.body;
+      const sql = "INSERT INTO things (tuser, tname, tphoto, tdescription, tlocation, toptions) VALUES (?, ?, ?, ?, ?, ?)";
+      const [rows] = await pool.query(sql, [tuser, tname, tphoto, tdescription, tlocation, toptions]);
+      res.json({ data: rows });
+
+    } catch (error) {
+      res.json({ status: error, message: error });
+    }
+
   },
 
   put: async (req, res) => {
-    data = {
-      method: req.method,
-      id: req.params.id,
-      body: req.body
-    };
-    res.json(data);
+
+    try {
+
+      const { tuser, tname, tphoto, tdescription, tlocation, toptions } = req.body;
+      const { id } = req.params;
+      const sql = "UPDATE posts SET tuser = ?, tname = ?, tphoto = ?, tdescription = ?, tlocation = ?, toptions = ? WHERE tid = ?"
+      const [rows] = await pool.query(sql, [tuser, tname, tphoto, tdescription, tlocation, toptions]);
+      res.json({ data: rows });
+
+    } catch (error) {
+
+      res.json({ status: error, message: error });
+
+    }
+
   }
 
 };
