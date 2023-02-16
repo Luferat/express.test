@@ -12,10 +12,10 @@ Antes de seguir as próximas etapas, verifique se preparou o [arquivo de configu
 
 ### Versionando
  - Abra / retorne ao GitHub Desktop;
- - Confirme se o branch da última atividade está ativo → Por exemplo `2023.02.11.Configuracao`;
+ - Confirme se o branch da última atividade está ativo → Por exemplo `01.Configuracao`;
    - *O novo branch será criado à partir do branch anterior, já que estamos "incrementando" o aplicativo com novos recursos.*
  - Clique no menu Branch → New branch...;
- - Nomeie o branch da melhor forma, por exemplo: `2023.02.11.Verbos_HTTP`;
+ - Nomeie o branch da melhor forma, por exemplo: `02.Verbos_HTTP`;
  - Clique no botão [Create branch].
  
 ### Respondendo às requisições 
