@@ -12,10 +12,10 @@ As tarefas mais complicadas que vamos realizar nas transações HTTP certamente 
 ### Versionando
 
  - Abra / retorne ao GitHub Desktop;
- - Confirme se o branch da última atividade está ativo → Por exemplo `2023.02.11.Rotas_com_parametros`;
+ - Confirme se o branch da última atividade está ativo → Por exemplo `03.Rotas_com_parametros`;
    - *O novo branch será criado a partir do branch anterior, já que estamos "incrementando" o aplicativo com novos recursos.*
  - Clique no menu Branch → New branch...;
- - Nomeie o branch da melhor forma, por exemplo: `2023.02.11.Verbos_POST_PUT`;
+ - Nomeie o branch da melhor forma, por exemplo: `04.Verbos_POST_PUT`;
  - Clique no botão [Create branch].
 
 ### Processando os Dados Recebidos
