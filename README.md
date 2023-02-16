@@ -13,7 +13,7 @@ Para facilitar a configuração do aplicativo, vamos usar a biblioteca [dotenv](
  - Abra / retorne ao **GitHub Desktop**;
  - Confirme se o *branch* `main` está ativo;
  - Clique no menu `Branch` → `New branch...`;
- - Nomeie o branch da melhor forma, por exemplo: `2023.02.11.Configuracao`;
+ - Nomeie o branch da melhor forma, por exemplo: `01.Configuracao`;
  - Clique no botão [Create branch].
 
 ### Dependências
