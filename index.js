@@ -4,7 +4,7 @@ const app = express();
 // Obtém configurações do aplicativo.
 const conf = require('dotenv').config().parsed;
 
-
+// Referências: https://github.com/sidorares/node-mysql2
 const mysql = require('mysql2');
 const conn = mysql.createPool({
   host: conf.HOSTNAME,
