@@ -51,7 +51,8 @@ Se não ocorreram erros, a API já está "no ar".
 ## Consumindo
 
 > **Importante!**
-Todos os dados enviados para e recebidos da API são JSON.
+>
+>Todos os dados enviados para e recebidos da API são JSON.
 
 Use o **Postman** para testar os recursos da API.
 
