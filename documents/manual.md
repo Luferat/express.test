@@ -171,4 +171,5 @@ http://loalhost:3000/thing/3
 Como antes, a resposta será um JSON com os dados retornados do banco de dados, confirmando a operação, similar à resposta obtida de um `POST` ou `PUT`.
 
 > **Dica!**
+> 
 > Uma das primeiras sugestões de implementação, é personalizar e padronizar as confirmações do "POST", "PUT" e "DELETE", além de personalizar também as mensagens de erro que podem ser enviadas como JSON para o cliente.
