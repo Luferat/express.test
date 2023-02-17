@@ -6,7 +6,7 @@ const conf = require('dotenv').config().parsed;
 
 
 const mysql = require('mysql2');
-const pool = mysql.createPool({
+const conn = mysql.createPool({
   host: conf.HOSTNAME,
   user: conf.USERNAME,
   password: conf.PASSWORD,
@@ -27,7 +27,7 @@ const thing = {
 
     try {
 
-      const [rows] = await pool.query("SELECT * FROM things");
+      const [rows] = await conn.query("SELECT * FROM things");
       res.json({ data: rows });
 
     } catch (error) {
@@ -43,7 +43,7 @@ const thing = {
     try {
 
       const { id } = req.params;
-      const [rows] = await pool.query("SELECT * FROM things WHERE tid = ?", [id]);
+      const [rows] = await conn.query("SELECT * FROM things WHERE tid = ?", [id]);
       res.json({ data: rows });
 
     } catch (error) {
@@ -60,7 +60,7 @@ const thing = {
 
       const { id } = req.params
       const sql = "UPDATE things SET tstatus = 'del' WHERE tid = ?"
-      const [rows] = await pool.query(sql, [id]);
+      const [rows] = await conn.query(sql, [id]);
       res.json({ data: rows });
 
     } catch (error) {
@@ -77,7 +77,7 @@ const thing = {
 
       const { tuser, tname, tphoto, tdescription, tlocation, toptions } = req.body;
       const sql = "INSERT INTO things (tuser, tname, tphoto, tdescription, tlocation, toptions) VALUES (?, ?, ?, ?, ?, ?)";
-      const [rows] = await pool.query(sql, [tuser, tname, tphoto, tdescription, tlocation, toptions]);
+      const [rows] = await conn.query(sql, [tuser, tname, tphoto, tdescription, tlocation, toptions]);
       res.json({ data: rows });
 
     } catch (error) {
@@ -93,7 +93,7 @@ const thing = {
       const { tuser, tname, tphoto, tdescription, tlocation, toptions } = req.body;
       const { id } = req.params;
       const sql = "UPDATE posts SET tuser = ?, tname = ?, tphoto = ?, tdescription = ?, tlocation = ?, toptions = ? WHERE tid = ?"
-      const [rows] = await pool.query(sql, [tuser, tname, tphoto, tdescription, tlocation, toptions]);
+      const [rows] = await conn.query(sql, [tuser, tname, tphoto, tdescription, tlocation, toptions]);
       res.json({ data: rows });
 
     } catch (error) {
